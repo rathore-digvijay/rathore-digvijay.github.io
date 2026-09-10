@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Health Renewals LMS — Digvijay Singh</title>
+<meta name="description" content="Digvijay Singh — Engineering Manager building AI and platform teams in insurtech. Nine years in backend platforms, distributed systems and applied AI." />
+<meta property="og:title" content="Health Renewals LMS — Digvijay Singh" />
+<meta property="og:description" content="Digvijay Singh — Engineering Manager building AI and platform teams in insurtech. Nine years in backend platforms, distributed systems and applied AI." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F5F1EA; color: #12100E; font-family: "IBM Plex Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #5C6B34; text-decoration: none; }
+  a:hover { color: #12100E; }
+  p { text-wrap: pretty; }
+</style>
+<style>
+  header nav a:hover { color: #12100E; }
+  a[href$=".html"]:hover h3 { color: #5C6B34; }
+</style>
+</head>
+<body>
+<div style="max-width: 880px; margin: 0 auto; padding: 0 28px 96px">
+  <header style="display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: baseline; justify-content: space-between; padding: 28px 0 20px; border-bottom: 1px solid #DDD6C9">
+    <a href="index.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #12100E">← Digvijay Singh</a>
+    <nav style="display: flex; gap: 18px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px">
+      <a href="motor-quote-agent.html">Motor Quote Agent</a>
+      <a href="renewal-platform.html">Renewal Platform</a>
+    </nav>
+  </header>
+
+  <div style="padding: 64px 0 48px">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #5C6B34; margin-bottom: 20px">Case study 03 · Operations · 2024</div>
+    <h1 style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: clamp(34px, 5.6vw, 58px); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 24px">Health Renewals LMS and voicebot: a calling floor that runs itself</h1>
+    <p style="font-size: 19px; line-height: 1.6; color: #3A352E; margin: 0; max-width: 62ch">A lead management system for 200+ calling agents, with voicebot automation handling around 500 outbound renewal calls a day. Outreach cost fell 30–40% and manual effort about 30%.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; padding: 26px 0; border-top: 1px solid #DDD6C9; border-bottom: 1px solid #DDD6C9">
+    <div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A8377; margin-bottom: 8px">My role</div>
+      <div style="font-size: 15.5px; line-height: 1.5">Architecture, delivery lead, ops stakeholder</div>
+    </div>
+    <div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A8377; margin-bottom: 8px">Stack</div>
+      <div style="font-size: 15.5px; line-height: 1.5">Node.js, NestJS, MongoDB, Redis, RabbitMQ, React.js, Arrowhead voicebot</div>
+    </div>
+    <div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A8377; margin-bottom: 8px">Users</div>
+      <div style="font-size: 15.5px; line-height: 1.5">200+ calling agents and their team leads</div>
+    </div>
+  </div>
+
+  <section style="padding: 60px 0 0">
+    <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6459; margin: 0 0 20px">Context and my role</h2>
+    <p style="font-size: 17.5px; line-height: 1.65; color: #3A352E; margin: 0 0 18px; max-width: 68ch">Health renewals need a conversation. Sum insured changes, family members are added, the customer wants to compare before paying — so a large share of health renewal leads goes to a calling floor rather than a self-serve link. That floor was running on spreadsheets and manual allocation, with no reliable view of which leads had actually been worked.</p>
+    <p style="font-size: 17.5px; line-height: 1.65; color: #3A352E; margin: 0; max-width: 68ch">I designed and led the build of the LMS that replaced it, and the voicebot layer in front of it. Much of my time went into sitting with the ops team to learn the real dispositions they use, rather than the ones a system designer would invent.</p>
+  </section>
+
+  <section style="padding: 52px 0 0">
+    <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6459; margin: 0 0 24px">Architecture</h2>
+    <div style="background: #FFFDF8; border: 1px solid #E6DFD2; padding: 28px; display: grid; gap: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px">
+        <div style="border: 1px solid #C7BFAE; padding: 14px; background: #F5F1EA">Renewal lead pool<div style="color: #8A8377; margin-top: 6px">expiry-driven</div></div>
+        <div style="border: 1px solid #5C6B34; padding: 14px; background: #EEF0E4">Allocation engine<div style="color: #6B6459; margin-top: 6px">rules, capacity, re-assignment</div></div>
+        <div style="border: 1px solid #C7BFAE; padding: 14px; background: #F5F1EA">Arrowhead voicebot<div style="color: #8A8377; margin-top: 6px">~500 calls/day, first touch</div></div>
+      </div>
+      <div style="color: #8A8377; text-align: center">↓ disposition events</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px">
+        <div style="border: 1px solid #C7BFAE; padding: 14px; background: #F5F1EA">Agent workspace<div style="color: #8A8377; margin-top: 6px">queue, script, disposition</div></div>
+        <div style="border: 1px solid #C7BFAE; padding: 14px; background: #F5F1EA">Payment link + booking<div style="color: #8A8377; margin-top: 6px">shared renewal services</div></div>
+        <div style="border: 1px solid #C7BFAE; padding: 14px; background: #F5F1EA">React ops dashboard<div style="color: #8A8377; margin-top: 6px">real-time success/failure, retry</div></div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px">
+        <div style="border: 1px dashed #C7BFAE; padding: 14px">MongoDB<div style="color: #8A8377; margin-top: 6px">leads, dispositions, audit</div></div>
+        <div style="border: 1px dashed #C7BFAE; padding: 14px">RabbitMQ<div style="color: #8A8377; margin-top: 6px">async workflows, retries</div></div>
+        <div style="border: 1px dashed #C7BFAE; padding: 14px">Reporting<div style="color: #8A8377; margin-top: 6px">funnel + agent performance</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 52px 0 0">
+    <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6459; margin: 0 0 24px">Decisions and trade-offs</h2>
+    <div style="display: grid; gap: 0">
+      <div style="padding: 24px 0; border-top: 1px solid #DDD6C9">
+        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 600; margin: 0 0 10px">Voicebot for the first touch, humans for intent</h3>
+        <p style="font-size: 16.5px; line-height: 1.62; color: #3A352E; margin: 0; max-width: 68ch">We did not try to automate the renewal conversation. The voicebot handles reminder and reachability calls and only routes interested customers to an agent, so the floor spends its day on leads that can convert. That kept the accuracy bar achievable while still cutting outreach cost 30–40%.</p>
+      </div>
+      <div style="padding: 24px 0; border-top: 1px solid #DDD6C9">
+        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 600; margin: 0 0 10px">Automated allocation with an override</h3>
+        <p style="font-size: 16.5px; line-height: 1.62; color: #3A352E; margin: 0; max-width: 68ch">Leads are assigned by rule — expiry proximity, agent capacity, language, past ownership — but team leads can reassign. Fully automatic allocation looked cleaner and was rejected in review by the people who would have to live with it during a shift crunch.</p>
+      </div>
+      <div style="padding: 24px 0; border-top: 1px solid #DDD6C9">
+        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 600; margin: 0 0 10px">Retry belongs in the dashboard</h3>
+        <p style="font-size: 16.5px; line-height: 1.62; color: #3A352E; margin: 0; max-width: 68ch">Every failure — communication, payment, booking — surfaces in the React ops dashboard with a retry action, so ops resolves most incidents without an engineer. That is the single change that most reduced our on-call noise.</p>
+      </div>
+      <div style="padding: 24px 0; border-top: 1px solid #DDD6C9; border-bottom: 1px solid #DDD6C9">
+        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 600; margin: 0 0 10px">Dispositions as a first-class model</h3>
+        <p style="font-size: 16.5px; line-height: 1.62; color: #3A352E; margin: 0; max-width: 68ch">The disposition taxonomy is versioned and reportable rather than free text, which is what makes agent performance and funnel reporting comparable month to month.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 52px 0 0">
+    <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6459; margin: 0 0 20px">Team and how I led it</h2>
+    <p style="font-size: 17.5px; line-height: 1.65; color: #3A352E; margin: 0; max-width: 68ch">Backend and frontend engineers from my group, delivered against an ops timeline rather than an engineering one. I ran this as a joint project with the operations leadership: weekly demos on the floor, dispositions and reports reviewed by the people using them, and a phased rollout by team so we could correct the allocation rules before the whole floor depended on them.</p>
+  </section>
+
+  <section style="padding: 52px 0 0">
+    <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6459; margin: 0 0 24px">Results</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 26px; background: #FFFDF8; border: 1px solid #E6DFD2; padding: 30px">
+      <div>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 600; letter-spacing: -0.02em">200+</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #6B6459; margin-top: 6px">Calling agents on the system</div>
+      </div>
+      <div>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 600; letter-spacing: -0.02em">~500</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #6B6459; margin-top: 6px">Automated calls / day</div>
+      </div>
+      <div>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 600; letter-spacing: -0.02em">30–40%</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #6B6459; margin-top: 6px">Lower outreach cost</div>
+      </div>
+      <div>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 600; letter-spacing: -0.02em">~30%</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #6B6459; margin-top: 6px">Less manual effort</div>
+      </div>
+    </div>
+  </section>
+
+  <nav style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; padding: 56px 0 0; border-top: 1px solid #DDD6C9; margin-top: 56px; font-family: 'IBM Plex Mono', monospace; font-size: 13px">
+    <a href="index.html">← All work</a>
+    <a href="motor-quote-agent.html">Next: Motor Quote Agent →</a>
+  </nav>
+</div>
+</body>
+</html>

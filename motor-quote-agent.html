@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Motor Quote Agent — Digvijay Singh</title>
+<meta name="description" content="Digvijay Singh — Engineering Manager building AI and platform teams in insurtech. Nine years in backend platforms, distributed systems and applied AI." />
+<meta property="og:title" content="Motor Quote Agent — Digvijay Singh" />
+<meta property="og:description" content="Digvijay Singh — Engineering Manager building AI and platform teams in insurtech. Nine years in backend platforms, distributed systems and applied AI." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #F5F1EA; color: #12100E; font-family: "IBM Plex Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #5C6B34; text-decoration: none; }
+  a:hover { color: #12100E; }
+  p { text-wrap: pretty; }
+</style>
+<style>
+  header nav a:hover { color: #12100E; }
+  a[href$=".html"]:hover h3 { color: #5C6B34; }
+</style>
+</head>
+<body>
+<div style="max-width: 880px; margin: 0 auto; padding: 0 28px 96px">
+  <header style="display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: baseline; justify-content: space-between; padding: 28px 0 20px; border-bottom: 1px solid #DDD6C9">
+    <a href="index.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #12100E">← Digvijay Singh</a>
+    <nav style="display: flex; gap: 18px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px">
+      <a href="renewal-platform.html">Renewal Platform</a>
+      <a href="health-renewals-lms.html">Health LMS</a>
+    </nav>
+  </header>
+
+  <div style="padding: 64px 0 48px">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #5C6B34; margin-bottom: 20px">Case study 01 · AI Labs · Jan 2026 – present</div>
+    <h1 style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: clamp(34px, 5.6vw, 58px); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 24px">Motor Quote Agent: a conversational path from question to issued policy</h1>
+    <p style="font-size: 19px; line-height: 1.6; color: #3A352E; margin: 0; max-width: 62ch">The first production LLM agent at InsuranceDekho. Partner agents describe what they need in plain language; the agent generates quotes, compares plans, looks up commission grids and issues policies across six-plus insurers.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; padding: 26px 0; border-top: 1px solid #DDD6C9; border-bottom: 1px solid #DDD6C9">
+    <div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A8377; margin-bottom: 8px">My role</div>
+      <div style="font-size: 15.5px; line-height: 1.5">Charter owner and tech lead. Team of 4.</div>
+    </div>
+    <div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A8377; margin-bottom: 8px">Stack</div>
+      <div style="font-size: 15.5px; line-height: 1.5">Python, FastAPI, LangGraph, PostgreSQL/pgvector, MongoDB, Redis, Langfuse, Kubernetes</div>
+    </div>
+    <div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A8377; margin-bottom: 8px">Status</div>
+      <div style="font-size: 15.5px; line-height: 1.5">Live in production with B2B partners</div>
+    </div>
+  </div>
+
+  <section style="padding: 60px 0 0">
+    <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6459; margin: 0 0 20px">Context and my role</h2>
+    <p style="font-size: 17.5px; line-height: 1.65; color: #3A352E; margin: 0 0 18px; max-width: 68ch">Motor quoting on the partner platform was a form-driven journey: pick a make, model and variant from long dropdowns, then step through insurer-by-insurer comparison. Agents on a call with a customer wanted to ask one question and get an answer.</p>
+    <p style="font-size: 17.5px; line-height: 1.65; color: #3A352E; margin: 0 0 18px; max-width: 68ch">There was no applied-AI function in the organization when we started. I defined the charter — what we would build, what we would not, how we would measure it — and built AI Labs from the ground up with a team of four. I owned the architecture, the model and retrieval choices, the evaluation approach, and the case for shipping an agent into a regulated, money-moving flow.</p>
+  </section>
+
+  <section style="padding: 52px 0 0">
+    <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6459; margin: 0 0 24px">Architecture</h2>
+    <div style="background: #FFFDF8; border: 1px solid #E6DFD2; padding: 28px; display: grid; gap: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px">
+        <div style="border: 1px solid #C7BFAE; padding: 14px; background: #F5F1EA">Partner app / WhatsApp<div style="color: #8A8377; margin-top: 6px">natural-language turn</div></div>
+        <div style="border: 1px solid #C7BFAE; padding: 14px; background: #F5F1EA">FastAPI gateway<div style="color: #8A8377; margin-top: 6px">auth, session, streaming</div></div>
+        <div style="border: 1px solid #5C6B34; padding: 14px; background: #EEF0E4">LangGraph orchestrator<div style="color: #6B6459; margin-top: 6px">stateful multi-step graph</div></div>
+      </div>
+      <div style="color: #8A8377; text-align: center">↓ tool calls</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px">
+        <div style="border: 1px solid #C7BFAE; padding: 14px; background: #F5F1EA">MMV resolver<div style="color: #8A8377; margin-top: 6px">pgvector + BM25, RRF fusion</div></div>
+        <div style="border: 1px solid #C7BFAE; padding: 14px; background: #F5F1EA">Quote &amp; issuance APIs<div style="color: #8A8377; margin-top: 6px">6+ insurer integrations</div></div>
+        <div style="border: 1px solid #C7BFAE; padding: 14px; background: #F5F1EA">Payout grid lookup<div style="color: #8A8377; margin-top: 6px">commission rules</div></div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px">
+        <div style="border: 1px dashed #C7BFAE; padding: 14px">Redis<div style="color: #8A8377; margin-top: 6px">session + hot cache</div></div>
+        <div style="border: 1px dashed #C7BFAE; padding: 14px">MongoDB<div style="color: #8A8377; margin-top: 6px">conversation + lifecycle</div></div>
+        <div style="border: 1px dashed #C7BFAE; padding: 14px">Langfuse<div style="color: #8A8377; margin-top: 6px">tracing, evals, cost</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 52px 0 0">
+    <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6459; margin: 0 0 24px">Decisions and trade-offs</h2>
+    <div style="display: grid; gap: 0">
+      <div style="padding: 24px 0; border-top: 1px solid #DDD6C9">
+        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 600; margin: 0 0 10px">Hybrid retrieval instead of pure vector search</h3>
+        <p style="font-size: 16.5px; line-height: 1.62; color: #3A352E; margin: 0; max-width: 68ch">Make-Model-Variant resolution is the hinge of the whole journey: get the variant wrong and the premium is wrong. Embeddings alone confused near-identical variant strings, and keyword search alone missed colloquial phrasing. We run BM25 and vector similarity together over PostgreSQL with pgvector and fuse with RRF, with HNSW and IVFFlat indexing and a dedicated embedding ingestion pipeline. Costs one extra query path; buys accuracy where accuracy is money.</p>
+      </div>
+      <div style="padding: 24px 0; border-top: 1px solid #DDD6C9">
+        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 600; margin: 0 0 10px">Tiered model routing</h3>
+        <p style="font-size: 16.5px; line-height: 1.62; color: #3A352E; margin: 0; max-width: 68ch">Intent classification and entity extraction run on a lightweight model; comparison and explanation run on a stronger one. That split is most of the reason average LLM cost per conversation lands around two cents and time-to-first-token stays sub-second.</p>
+      </div>
+      <div style="padding: 24px 0; border-top: 1px solid #DDD6C9">
+        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 600; margin: 0 0 10px">A stateful graph, not a prompt chain</h3>
+        <p style="font-size: 16.5px; line-height: 1.62; color: #3A352E; margin: 0; max-width: 68ch">Quoting is a multi-turn negotiation: partial vehicle details, corrections, add-on changes, insurer switches. LangGraph gives explicit state and resumable steps, so a correction on turn nine does not restart the journey. Deterministic business rules — payout grids, eligibility, issuance — stay in normal services behind function calls rather than in the model.</p>
+      </div>
+      <div style="padding: 24px 0; border-top: 1px solid #DDD6C9; border-bottom: 1px solid #DDD6C9">
+        <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 600; margin: 0 0 10px">Tracing and evals from day one</h3>
+        <p style="font-size: 16.5px; line-height: 1.62; color: #3A352E; margin: 0; max-width: 68ch">Every conversation is traced in Langfuse with per-step latency and cost, and regression evals gate prompt and model changes. Without that, nobody would have signed off on an agent touching policy issuance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 52px 0 0">
+    <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6459; margin: 0 0 20px">Team and how I led it</h2>
+    <p style="font-size: 17.5px; line-height: 1.65; color: #3A352E; margin: 0 0 18px; max-width: 68ch">Four engineers, none of whom had shipped an LLM system before. We split the work into retrieval, orchestration and integrations, and ran a weekly design review where each owner defended their interface rather than their code. I kept the insurer integration contracts stable so the agent work could move fast without breaking the platform teams around us.</p>
+    <p style="font-size: 17.5px; line-height: 1.65; color: #3A352E; margin: 0; max-width: 68ch">The harder leadership work was outside the team: agreeing with Product and Business on which parts of a regulated journey an agent may decide, and which parts it may only execute.</p>
+  </section>
+
+  <section style="padding: 52px 0 0">
+    <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6459; margin: 0 0 24px">Results</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 26px; background: #FFFDF8; border: 1px solid #E6DFD2; padding: 30px">
+      <div>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 600; letter-spacing: -0.02em">26K+</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #6B6459; margin-top: 6px">Conversations in a 15-day window</div>
+      </div>
+      <div>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 600; letter-spacing: -0.02em">9K+</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #6B6459; margin-top: 6px">Unique partner agents</div>
+      </div>
+      <div>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 600; letter-spacing: -0.02em">&lt;1s</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #6B6459; margin-top: 6px">Time to first token</div>
+      </div>
+      <div>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 600; letter-spacing: -0.02em">3–5s</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #6B6459; margin-top: 6px">p90 response</div>
+      </div>
+    </div>
+  </section>
+
+  <nav style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; padding: 56px 0 0; border-top: 1px solid #DDD6C9; margin-top: 56px; font-family: 'IBM Plex Mono', monospace; font-size: 13px">
+    <a href="index.html">← All work</a>
+    <a href="renewal-platform.html">Next: Renewal Platform →</a>
+  </nav>
+</div>
+</body>
+</html>
