@@ -18,6 +18,23 @@
   a { color: #5C6B34; text-decoration: none; }
   a:hover { color: #12100E; }
   p { text-wrap: pretty; }
+
+  img { max-width: 100%; height: auto; }
+  section[id] { scroll-margin-top: 100px; }
+  @media (max-width: 780px) {
+    [data-r="hero"], [data-r="split"] { grid-template-columns: minmax(0, 1fr) !important; }
+    [data-r="split"] { gap: 14px !important; }
+    [data-r="hero"] { gap: 32px !important; padding-top: 44px !important; padding-bottom: 44px !important; }
+    [data-r="photo"] { max-width: 200px; }
+    [data-r="dark"] { padding: 34px 22px !important; }
+    [data-r="sec"] { padding-top: 54px !important; }
+    section[id] { scroll-margin-top: 96px; }
+    [data-r="head"] { padding: 16px 0 14px !important; }
+  }
+  @media (max-width: 560px) {
+    [data-r="nav"] { gap: 8px 14px !important; font-size: 11.5px !important; }
+    [data-r="stats"] { gap: 20px !important; }
+  }
 </style>
 <style>
   header nav a:hover { color: #12100E; }
@@ -25,11 +42,11 @@
 </style>
 </head>
 <body>
-<div style="max-width: 1080px; margin: 0 auto; padding: 0 28px 96px">
+<div style="max-width: 1080px; margin: 0 auto; padding: 0 clamp(16px, 4.5vw, 28px) 96px">
 
-  <header style="display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: baseline; justify-content: space-between; padding: 28px 0 20px; border-bottom: 1px solid #DDD6C9; position: sticky; top: 0; background: #F5F1EA; z-index: 20">
+  <header data-r="head" style="display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: baseline; justify-content: space-between; padding: 28px 0 20px; border-bottom: 1px solid #DDD6C9; position: sticky; top: 0; background: #F5F1EA; z-index: 20">
     <a href="#top" style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #12100E">Digvijay Singh</a>
-    <nav style="display: flex; flex-wrap: wrap; gap: 18px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.04em">
+    <nav data-r="nav" style="display: flex; flex-wrap: wrap; gap: 18px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.04em">
       <a href="#work">Work</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
@@ -39,7 +56,7 @@
     </nav>
   </header>
 
-  <section id="top" style="display: grid; grid-template-columns: minmax(0, 1fr) 216px; gap: 48px; align-items: start; padding: 72px 0 64px">
+  <section id="top" data-r="hero" style="display: grid; grid-template-columns: minmax(0, 1fr) 216px; gap: 48px; align-items: start; padding: 72px 0 64px">
     <div>
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #5C6B34; margin-bottom: 22px">Gurugram, India · quietly open to conversations</div>
       <h1 style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: clamp(38px, 6vw, 68px); line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 28px">Engineering Manager building AI and platform teams in insurtech.</h1>
@@ -51,13 +68,13 @@
         <a href="https://github.com/rathore-digvijay" target="_blank" rel="noopener" style="padding: 11px 18px; border: 1px solid #C7BFAE; border-radius: 2px; color: #12100E">GitHub</a>
       </div>
     </div>
-    <div style="border: 1px solid #DDD6C9; background: #FFFDF8; padding: 8px">
+    <div data-r="photo" style="border: 1px solid #DDD6C9; background: #FFFDF8; padding: 8px">
       <img src="https://rathore-digvijay.github.io/rathore-digvijay/img/profile.jpg" alt="Digvijay Singh" style="display: block; width: 100%; aspect-ratio: 1 / 1.15; object-fit: cover; filter: grayscale(0.2)" />
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A8377; padding: 8px 2px 2px">Digvijay Singh</div>
     </div>
   </section>
 
-  <section style="border-top: 1px solid #DDD6C9; border-bottom: 1px solid #DDD6C9; padding: 34px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 28px">
+  <section data-r="stats" style="border-top: 1px solid #DDD6C9; border-bottom: 1px solid #DDD6C9; padding: 34px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 28px">
     <div>
       <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 600; letter-spacing: -0.02em">9 yrs</div>
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #6B6459; margin-top: 6px">Building backend platforms</div>
@@ -86,7 +103,7 @@
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8A8377">Three case studies</div>
     </div>
 
-    <a href="motor-quote-agent.html" style="display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 40px; padding: 30px 0; border-top: 1px solid #DDD6C9; color: #12100E">
+    <a href="motor-quote-agent.html" data-r="split" style="display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 40px; padding: 30px 0; border-top: 1px solid #DDD6C9; color: #12100E">
       <div>
         <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #5C6B34; margin-bottom: 12px">01 · AI Labs · 2026</div>
         <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(26px, 3.4vw, 38px); font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 12px">Motor Quote Agent</h3>
@@ -98,7 +115,7 @@
       </div>
     </a>
 
-    <a href="renewal-platform.html" style="display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 40px; padding: 30px 0; border-top: 1px solid #DDD6C9; color: #12100E">
+    <a href="renewal-platform.html" data-r="split" style="display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 40px; padding: 30px 0; border-top: 1px solid #DDD6C9; color: #12100E">
       <div>
         <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #5C6B34; margin-bottom: 12px">02 · Platform · 2023–present</div>
         <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(26px, 3.4vw, 38px); font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 12px">Renewal Platform</h3>
@@ -110,7 +127,7 @@
       </div>
     </a>
 
-    <a href="health-renewals-lms.html" style="display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 40px; padding: 30px 0; border-top: 1px solid #DDD6C9; border-bottom: 1px solid #DDD6C9; color: #12100E">
+    <a href="health-renewals-lms.html" data-r="split" style="display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 40px; padding: 30px 0; border-top: 1px solid #DDD6C9; border-bottom: 1px solid #DDD6C9; color: #12100E">
       <div>
         <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #5C6B34; margin-bottom: 12px">03 · Operations · 2024</div>
         <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(26px, 3.4vw, 38px); font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 12px">Health Renewals LMS &amp; voicebot</h3>
@@ -141,10 +158,10 @@
     </div>
   </section>
 
-  <section id="experience" style="padding: 78px 0 0">
+  <section id="experience" data-r="sec" style="padding: 78px 0 0">
     <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6459; margin: 0 0 34px">Experience</h2>
 
-    <div style="display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 32px; padding: 28px 0; border-top: 1px solid #DDD6C9">
+    <div data-r="split" style="display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 32px; padding: 28px 0; border-top: 1px solid #DDD6C9">
       <div>
         <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B6459">Apr 2022 – Present</div>
         <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 17px; font-weight: 600; margin-top: 8px">InsuranceDekho</div>
@@ -162,7 +179,7 @@
       </div>
     </div>
 
-    <div style="display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 32px; padding: 28px 0; border-top: 1px solid #DDD6C9">
+    <div data-r="split" style="display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 32px; padding: 28px 0; border-top: 1px solid #DDD6C9">
       <div>
         <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B6459">Jan 2021 – Apr 2022</div>
         <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 17px; font-weight: 600; margin-top: 8px">Wrocus Technologies</div>
@@ -179,7 +196,7 @@
       </div>
     </div>
 
-    <div style="display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 32px; padding: 28px 0; border-top: 1px solid #DDD6C9; border-bottom: 1px solid #DDD6C9">
+    <div data-r="split" style="display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 32px; padding: 28px 0; border-top: 1px solid #DDD6C9; border-bottom: 1px solid #DDD6C9">
       <div>
         <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B6459">Sep 2017 – Jan 2021</div>
         <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 17px; font-weight: 600; margin-top: 8px">Creatiosoft Solutions</div>
@@ -196,7 +213,7 @@
     </div>
   </section>
 
-  <section id="skills" style="padding: 78px 0 0">
+  <section id="skills" data-r="sec" style="padding: 78px 0 0">
     <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6459; margin: 0 0 30px">Core skills</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 26px 40px">
       <div style="border-top: 1px solid #DDD6C9; padding-top: 16px">
@@ -226,7 +243,7 @@
     </div>
   </section>
 
-  <section id="writing" style="padding: 78px 0 0">
+  <section id="writing" data-r="sec" style="padding: 78px 0 0">
     <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 30px">
       <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6459; margin: 0">Writing</h2>
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8A8377">Drafts in progress</div>
@@ -247,9 +264,9 @@
     </div>
   </section>
 
-  <section style="padding: 78px 0 0">
+  <section data-r="sec" style="padding: 78px 0 0">
     <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6459; margin: 0 0 30px">Education</h2>
-    <div style="display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 32px; padding: 24px 0; border-top: 1px solid #DDD6C9; border-bottom: 1px solid #DDD6C9">
+    <div data-r="split" style="display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 32px; padding: 24px 0; border-top: 1px solid #DDD6C9; border-bottom: 1px solid #DDD6C9">
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B6459">2013 – 2017</div>
       <div>
         <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 21px; font-weight: 600">B.Tech, Computer Science and Engineering</div>
@@ -258,8 +275,8 @@
     </div>
   </section>
 
-  <section id="contact" style="padding: 78px 0 0">
-    <div style="background: #12100E; color: #F5F1EA; padding: 52px 44px">
+  <section id="contact" data-r="sec" style="padding: 78px 0 0">
+    <div data-r="dark" style="background: #12100E; color: #F5F1EA; padding: 52px 44px">
       <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(28px, 4vw, 44px); font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 18px; max-width: 24ch">Happy to talk about platforms, teams, or applied AI.</h2>
       <p style="font-size: 17px; line-height: 1.6; color: #C9C3B7; max-width: 52ch; margin: 0 0 30px">Based in Gurugram, India. Open to Engineering Manager and Engineering Lead conversations, and always up for comparing notes on agent architecture.</p>
       <div style="display: flex; flex-wrap: wrap; gap: 12px 14px; font-family: 'IBM Plex Mono', monospace; font-size: 13px">
